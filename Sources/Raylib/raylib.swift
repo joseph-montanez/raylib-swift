@@ -1,5 +1,11 @@
 import CRaylib
+#if os(macOS)
+import Foundation
+import Cocoa
+#endif
+#if os(Linux)
 import Glibc
+#endif
 
 public typealias Velocity = Vector2
 
