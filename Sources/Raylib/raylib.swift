@@ -89,4 +89,5 @@ public let BLACK = Color(r: 0, g: 0, b: 0, a: 255) //  Black
 public let BLANK = Color(r: 0, g: 0, b: 0, a: 0) //  Blank (Transparent)
 public let MAGENTA = Color(r: 255, g: 0, b: 255, a: 255) //  Magenta
 public let RAYWHITE = Color(r: 245, g: 245, b: 245, a: 255) //  My own White (raylib logo)
-public let OLIVEDAB = Color(r: 58, g: 132, b: 86, a: 255)
+public let OLIVEDAB = Color(r: 58, g: 132, b: 86, a: 255) // Olive Dab'ish - Less eye burning green
+public let LIGHTBEIGE = Color(r: 248, g: 205, b: 174, a: 255) // Light Beige
