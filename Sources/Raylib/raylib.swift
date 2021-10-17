@@ -6,6 +6,9 @@ import Cocoa
 #if os(Linux)
 import Glibc
 #endif
+#if os(Windows)
+import ucrt
+#endif
 
 public typealias Velocity = Vector2
 
@@ -28,10 +31,17 @@ public func radians(from degrees: Float) -> Float {
 }
 
 public func velocity(from d: Direction) -> Velocity {
+  #if os(Windows)
   return Velocity(
-    x: sin(radians(from: d.angle)) * d.speed,
-    y: cos(radians(from: d.angle)) * d.speed
+          x: sinf(radians(from: d.angle)) * d.speed,
+          y: cosf(radians(from: d.angle)) * d.speed
   )
+  #else
+  return Velocity(
+          x: sin(radians(from: d.angle)) * d.speed,
+          y: cos(radians(from: d.angle)) * d.speed
+  )
+  #endif
 }
 
 extension Vector2 {
@@ -60,7 +70,7 @@ extension Vector2 {
 // Misc
 /// Get the current time in seconds
 public func getCurrentTime() -> Int {
-  return time(nil)
+  return Int(time(nil))
 }
 
 public let LIGHTGRAY = Color(r: 200, g: 200, b: 200, a: 255) //  Light Gray
